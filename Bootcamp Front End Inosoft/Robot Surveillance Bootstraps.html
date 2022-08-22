@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        h1 { text-align: center; font-family: fantasy;}
+        h2 { text-align: center; font-family:'Times New Roman', Times, serif;}
+        .square {
+            border-radius: 25px;
+            margin: auto;
+            height: 300px;
+            width: 300px;
+            background-color:bisque;}
+        .btn-primary { border-radius: 25px; background-color: orange; color: beige;}
+        .card-image-bottom {
+            margin:auto;
+            height: 100%;
+            width: 100%;
+        }
+        .card {
+            margin:auto;
+            height: 230px;
+            width: 300px;
+        }
+    </style>
+</head>
+  <body style="background-color:azure">
+    <h1>Robot Surveillance</h1>
+    <div class="container text-center">
+        <div class="col"> 
+            <div class="row-4">
+                <div class="square">
+                <br>
+                <h2> LOGIN </h2>
+                <form action="/action_page.php">
+                    <div class="form-group">
+                        <label for="login" class="form-label">Alamat Email :</label>
+                        <input type="email" class="form-control" id="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" class="form-label">Password :</label>
+                        <input type="password" class="form-control" id="pass">
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-primary">Login</button>
+                </form>
+                </div>
+            </div> <br>
+            <div class="row-4">
+                <div class="card">
+                    <div class="card-header">Robot beroda</div>
+                    <div class="card-body">
+                        <img class="card-image-bottom" src="robot beroda.jpg">
+                    </div>
+                    <div class="card-footer text-muted"> 2 jam yang lalu</div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
