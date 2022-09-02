@@ -64,52 +64,28 @@ function percentage(){
     nilai = document.getElementById("screen").innerHTML;
     if(nilai.includes(" + ") == true ){
         n2 = nilai.split(" + ");
-        if (n2[n2.length-1].includes(".")){
-            nilai2 = n2[n2.length-1]*100;
-        }
-        else {
-            nilai2 = n2[n2.length-1]/100;
-        }
+        nilai2 = n2[n2.length-1]/100;
         nilai = n2.slice(0,-1) + " + " + nilai2;
     }
     else if(nilai.includes(" * ") == true ){
         n2 = nilai.split(" * ");
-        if (n2[n2.length-1].includes(".")){
-            nilai2 = n2[n2.length-1]*100;
-        }
-        else {
-            nilai2 = n2[n2.length-1]/100;
-        }
+        nilai2 = n2[n2.length-1]/100;
         nilai = n2.slice(0,-1) + " * " + nilai2;
     }
     else if(nilai.includes(" / ") == true ){
         n2 = nilai.split(" / ");
-        if (n2[n2.length-1].includes(".")){
-            nilai2 = n2[n2.length-1]*100;
-        }
-        else {
-            nilai2 = n2[n2.length-1]/100;
-        }
+        nilai2 = n2[n2.length-1]/100;
         nilai = n2.slice(0,-1) + " / " + nilai2;
     }
     else if(nilai.includes(" - ") == true ){
         n2 = nilai.split(" - ");
-        if (n2[n2.length-1].includes(".")){
-            nilai2 = n2[n2.length-1]*100;
-        }
-        else {
-            nilai2 = n2[n2.length-1]/100;
-        }
+        nilai2 = n2[n2.length-1]/100;
         nilai = n2.slice(0,-1) + " - " + nilai2;
     }
     else
     {
-        if (nilai.includes(".")){
-            nilai = nilai*100;
-        }
-        else {
-            nilai = nilai/100;
-        }
+ 
+        nilai = nilai/100;
     }
     document.getElementById("screen").innerHTML = nilai;
 }
