@@ -1,6 +1,6 @@
 function input(input){
     let nilai = document.getElementById("screen").innerHTML;
-    if ((nilai == '0') && (input == '.' || input == '+' || input == '-' || input == '*' || input == '/')) {
+    if ((nilai == '0') && (input == '.' || input == ' + ' || input == ' - ' || input == ' * ' || input == ' / ')) {
         nilai = nilai + input;
     }
     else if(nilai != '0') {
@@ -9,10 +9,15 @@ function input(input){
     else {
         nilai = input;
     }
-    if ((nilai[nilai.length-2] == '+' || nilai[nilai.length-2] == '-' || nilai[nilai.length-2] == '*' || nilai[nilai.length-2] == '/') && 
-    (input == '+' || input == '-' || input == '*' || input == '/') ){
-        nilai = nilai.substr(0, nilai.length-2);
+    if ((nilai[nilai.length-5] == '+' || nilai[nilai.length-5] == '-' || nilai[nilai.length-5] == '*' || nilai[nilai.length-5] == '/') && 
+    (input == ' + ' || input == ' - ' || input == ' * ' || input == ' / ') ){
+        nilai = nilai.substr(0, nilai.length-5);
         nilai = nilai + input;
+    }
+    n = nilai.substr(0, nilai.length-3);
+    if ((input == ' + ' || input == ' - ' || input == ' * ' || input == ' / ') && (n.includes(' + ') || n.includes(' - ') || n.includes(' * ') || n.includes(' / '))){
+        n = eval(n);
+        nilai = n + input;
     }
     document.getElementById("screen").innerHTML = nilai;
 }
@@ -29,11 +34,82 @@ function C(){
 }
 function negatif(){
     nilai = document.getElementById("screen").innerHTML;
-    nilai = (-1)*nilai;
+    if(nilai.includes(" + ") == true ){
+        n2 = nilai.split(" + ");
+        nilai2 = (-1)*n2[n2.length-1];
+        nilai = n2.slice(0,-1) + " + " + nilai2;
+    }
+    else if(nilai.includes(" - ") == true ){
+        n2 = nilai.split(" - ");
+        nilai2 = (-1)*n2[n2.length-1];
+        nilai = n2.slice(0,-1) + " - " + nilai2;
+    }
+    else if(nilai.includes(" * ") == true ){
+        n2 = nilai.split(" * ");
+        nilai2 = (-1)*n2[n2.length-1];
+        nilai = n2.slice(0,-1) + " * " + nilai2;
+    }
+    else if(nilai.includes(" / ") == true ){
+        n2 = nilai.split(" / ");
+        nilai2 = (-1)*n2[n2.length-1];
+        nilai = n2.slice(0,-1) + " / " + nilai2;
+    }
+    else
+    {
+        nilai = (-1)*nilai;
+    }
     document.getElementById("screen").innerHTML = nilai;
 }
 function percentage(){
     nilai = document.getElementById("screen").innerHTML;
-    nilai = nilai / 100;
+    if(nilai.includes(" + ") == true ){
+        n2 = nilai.split(" + ");
+        if (n2[n2.length-1].includes(".")){
+            nilai2 = n2[n2.length-1]*100;
+        }
+        else {
+            nilai2 = n2[n2.length-1]/100;
+        }
+        nilai = n2.slice(0,-1) + " + " + nilai2;
+    }
+    else if(nilai.includes(" * ") == true ){
+        n2 = nilai.split(" * ");
+        if (n2[n2.length-1].includes(".")){
+            nilai2 = n2[n2.length-1]*100;
+        }
+        else {
+            nilai2 = n2[n2.length-1]/100;
+        }
+        nilai = n2.slice(0,-1) + " * " + nilai2;
+    }
+    else if(nilai.includes(" / ") == true ){
+        n2 = nilai.split(" / ");
+        if (n2[n2.length-1].includes(".")){
+            nilai2 = n2[n2.length-1]*100;
+        }
+        else {
+            nilai2 = n2[n2.length-1]/100;
+        }
+        nilai = n2.slice(0,-1) + " / " + nilai2;
+    }
+    else if(nilai.includes(" - ") == true ){
+        n2 = nilai.split(" - ");
+        if (n2[n2.length-1].includes(".")){
+            nilai2 = n2[n2.length-1]*100;
+        }
+        else {
+            nilai2 = n2[n2.length-1]/100;
+        }
+        nilai = n2.slice(0,-1) + " - " + nilai2;
+    }
+    else
+    {
+        if (nilai.includes(".")){
+            nilai = nilai*100;
+        }
+        else {
+            nilai = nilai/100;
+        }
+    }
     document.getElementById("screen").innerHTML = nilai;
 }
