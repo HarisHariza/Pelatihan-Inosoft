@@ -84,7 +84,7 @@ function percentage(){
     }
     else
     {
- 
+
         nilai = nilai/100;
     }
     document.getElementById("screen").innerHTML = nilai;
